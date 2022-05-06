@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220505 12:17:23.555" rpa="false" schemaversion="3">
+<suite id="s1" name="NewApp" source="C:\Users\calib\PycharmProjects\pythonProject\Test\NewApp.robot">
+<test id="s1-t1" name="Login" line="6">
+<kw name="To_Validate_CompanyId_Useranme_password" library="OpenApp">
+<kw name="Verify_required_field_accept_blank_value" library="OpenApp">
+<kw name="OpenApp" library="OpenApp">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${port}</arg>
+<arg>platformName=${platform}</arg>
+<arg>deviceName=${device}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220505 12:17:24.410" endtime="20220505 12:17:41.478"/>
+</kw>
+<status status="PASS" starttime="20220505 12:17:24.408" endtime="20220505 12:17:41.479"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Location_Allow}</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:17:41.480" endtime="20220505 12:17:47.637"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Location_Allow}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:17:47.647" level="INFO">Clicking element '//android.widget.Button[@text="ALLOW"]'.</msg>
+<status status="PASS" starttime="20220505 12:17:47.638" endtime="20220505 12:17:47.874"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:17:47.874" endtime="20220505 12:17:48.114"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:17:48.122" level="INFO">Clicking element '//android.widget.Button[@text="LOG IN"]'.</msg>
+<status status="PASS" starttime="20220505 12:17:48.114" endtime="20220505 12:17:49.811"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Call}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:17:49.811" endtime="20220505 12:17:51.223"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Call}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:17:51.231" level="INFO">Clicking element '//android.widget.Button[@text="ALLOW"]'.</msg>
+<status status="PASS" starttime="20220505 12:17:51.224" endtime="20220505 12:17:51.409"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220505 12:17:51.974" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220505 12:17:51.410" endtime="20220505 12:17:51.975"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220505 12:17:56.985" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220505 12:17:51.975" endtime="20220505 12:17:56.985"/>
+</kw>
+<status status="PASS" starttime="20220505 12:17:24.406" endtime="20220505 12:17:56.986"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${counter}</var>
+<value>0</value>
+<value>5</value>
+<iter>
+<var name="${counter}">0</var>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:17:56.987" endtime="20220505 12:17:57.214"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:17:57.219" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:17:57.214" endtime="20220505 12:17:57.395"/>
+</kw>
+<kw name="Numerify" library="FakerLibrary">
+<var>${com_id}</var>
+<arg>text=######</arg>
+<doc>Generate a string with each placeholder in ``text`` replaced according
+to the following rules:</doc>
+<msg timestamp="20220505 12:17:57.397" level="INFO">${com_id} = 554883</msg>
+<status status="PASS" starttime="20220505 12:17:57.396" endtime="20220505 12:17:57.397"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<arg>${com_id}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:17:57.400" level="INFO">Typing text '554883' into text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:17:57.397" endtime="20220505 12:17:57.644"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:17:57.653" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:17:57.644" endtime="20220505 12:17:58.500"/>
+</kw>
+<kw name="Free Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20220505 12:17:58.501" level="INFO">${email} = gcarrillo@gmail.com</msg>
+<status status="PASS" starttime="20220505 12:17:58.501" endtime="20220505 12:17:58.502"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:17:58.506" level="INFO">Typing text 'gcarrillo@gmail.com' into text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:17:58.502" endtime="20220505 12:17:58.692"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:17:58.696" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:17:58.693" endtime="20220505 12:17:59.859"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${pass}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20220505 12:17:59.860" level="INFO">${pass} = m)0+2ZQuC#</msg>
+<status status="PASS" starttime="20220505 12:17:59.859" endtime="20220505 12:17:59.860"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:17:59.864" level="INFO">Typing text 'm)0+2ZQuC#' into text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:17:59.860" endtime="20220505 12:18:00.131"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:00.140" level="INFO">Clicking element '//android.widget.Button[@text="LOG IN"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:00.132" endtime="20220505 12:18:00.990"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:18:00.991" endtime="20220505 12:18:05.210"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:05.223" level="INFO">Clicking element '//android.widget.Button[@text="ok"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:05.211" endtime="20220505 12:18:05.458"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220505 12:18:05.459" level="INFO">${counter} = 0+1</msg>
+<status status="PASS" starttime="20220505 12:18:05.458" endtime="20220505 12:18:05.459"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220505 12:18:05.460" endtime="20220505 12:18:05.461"/>
+</kw>
+<status status="PASS" starttime="20220505 12:17:56.987" endtime="20220505 12:18:05.461"/>
+</iter>
+<iter>
+<var name="${counter}">1</var>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:18:05.462" endtime="20220505 12:18:05.651"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:05.657" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:18:05.652" endtime="20220505 12:18:06.305"/>
+</kw>
+<kw name="Numerify" library="FakerLibrary">
+<var>${com_id}</var>
+<arg>text=######</arg>
+<doc>Generate a string with each placeholder in ``text`` replaced according
+to the following rules:</doc>
+<msg timestamp="20220505 12:18:06.306" level="INFO">${com_id} = 246718</msg>
+<status status="PASS" starttime="20220505 12:18:06.305" endtime="20220505 12:18:06.306"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<arg>${com_id}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:06.313" level="INFO">Typing text '246718' into text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:18:06.306" endtime="20220505 12:18:07.115"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:07.121" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:18:07.115" endtime="20220505 12:18:07.929"/>
+</kw>
+<kw name="Free Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20220505 12:18:07.932" level="INFO">${email} = ymitchell@hotmail.com</msg>
+<status status="PASS" starttime="20220505 12:18:07.930" endtime="20220505 12:18:07.932"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:07.936" level="INFO">Typing text 'ymitchell@hotmail.com' into text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:18:07.932" endtime="20220505 12:18:09.257"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:09.263" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:18:09.258" endtime="20220505 12:18:10.044"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${pass}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20220505 12:18:10.045" level="INFO">${pass} = 5)Y(7Mca(_</msg>
+<status status="PASS" starttime="20220505 12:18:10.044" endtime="20220505 12:18:10.045"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:10.049" level="INFO">Typing text '5)Y(7Mca(_' into text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:18:10.045" endtime="20220505 12:18:10.802"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:10.807" level="INFO">Clicking element '//android.widget.Button[@text="LOG IN"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:10.802" endtime="20220505 12:18:11.483"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:18:11.484" endtime="20220505 12:18:14.249"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:14.257" level="INFO">Clicking element '//android.widget.Button[@text="ok"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:14.249" endtime="20220505 12:18:14.438"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220505 12:18:14.439" level="INFO">${counter} = 1+1</msg>
+<status status="PASS" starttime="20220505 12:18:14.439" endtime="20220505 12:18:14.440"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220505 12:18:14.440" endtime="20220505 12:18:14.441"/>
+</kw>
+<status status="PASS" starttime="20220505 12:18:05.461" endtime="20220505 12:18:14.441"/>
+</iter>
+<iter>
+<var name="${counter}">2</var>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:18:14.441" endtime="20220505 12:18:14.570"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:14.574" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:18:14.570" endtime="20220505 12:18:15.234"/>
+</kw>
+<kw name="Numerify" library="FakerLibrary">
+<var>${com_id}</var>
+<arg>text=######</arg>
+<doc>Generate a string with each placeholder in ``text`` replaced according
+to the following rules:</doc>
+<msg timestamp="20220505 12:18:15.236" level="INFO">${com_id} = 770966</msg>
+<status status="PASS" starttime="20220505 12:18:15.235" endtime="20220505 12:18:15.236"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<arg>${com_id}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:15.240" level="INFO">Typing text '770966' into text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:18:15.236" endtime="20220505 12:18:16.022"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:16.028" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:18:16.022" endtime="20220505 12:18:16.823"/>
+</kw>
+<kw name="Free Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20220505 12:18:16.825" level="INFO">${email} = nathaniel82@hotmail.com</msg>
+<status status="PASS" starttime="20220505 12:18:16.824" endtime="20220505 12:18:16.825"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:16.830" level="INFO">Typing text 'nathaniel82@hotmail.com' into text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:18:16.825" endtime="20220505 12:18:17.625"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:17.634" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:18:17.626" endtime="20220505 12:18:18.407"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${pass}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20220505 12:18:18.408" level="INFO">${pass} = !#B2rnXxUz</msg>
+<status status="PASS" starttime="20220505 12:18:18.407" endtime="20220505 12:18:18.408"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:18.413" level="INFO">Typing text '!#B2rnXxUz' into text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:18:18.408" endtime="20220505 12:18:19.445"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:19.453" level="INFO">Clicking element '//android.widget.Button[@text="LOG IN"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:19.446" endtime="20220505 12:18:20.249"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:18:20.250" endtime="20220505 12:18:22.723"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:22.725" level="INFO">Clicking element '//android.widget.Button[@text="ok"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:22.723" endtime="20220505 12:18:22.903"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220505 12:18:22.904" level="INFO">${counter} = 2+1</msg>
+<status status="PASS" starttime="20220505 12:18:22.903" endtime="20220505 12:18:22.904"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220505 12:18:22.904" endtime="20220505 12:18:22.905"/>
+</kw>
+<status status="PASS" starttime="20220505 12:18:14.441" endtime="20220505 12:18:22.905"/>
+</iter>
+<iter>
+<var name="${counter}">3</var>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:18:22.905" endtime="20220505 12:18:23.016"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:23.027" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:18:23.016" endtime="20220505 12:18:23.686"/>
+</kw>
+<kw name="Numerify" library="FakerLibrary">
+<var>${com_id}</var>
+<arg>text=######</arg>
+<doc>Generate a string with each placeholder in ``text`` replaced according
+to the following rules:</doc>
+<msg timestamp="20220505 12:18:23.687" level="INFO">${com_id} = 218869</msg>
+<status status="PASS" starttime="20220505 12:18:23.686" endtime="20220505 12:18:23.688"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<arg>${com_id}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:23.696" level="INFO">Typing text '218869' into text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:18:23.688" endtime="20220505 12:18:24.464"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:24.471" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:18:24.465" endtime="20220505 12:18:25.224"/>
+</kw>
+<kw name="Free Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20220505 12:18:25.226" level="INFO">${email} = wgreene@hotmail.com</msg>
+<status status="PASS" starttime="20220505 12:18:25.225" endtime="20220505 12:18:25.226"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:25.233" level="INFO">Typing text 'wgreene@hotmail.com' into text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:18:25.226" endtime="20220505 12:18:25.992"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:25.997" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:18:25.992" endtime="20220505 12:18:26.644"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${pass}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20220505 12:18:26.645" level="INFO">${pass} = 5)SI1Coi^P</msg>
+<status status="PASS" starttime="20220505 12:18:26.644" endtime="20220505 12:18:26.645"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:26.656" level="INFO">Typing text '5)SI1Coi^P' into text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:18:26.645" endtime="20220505 12:18:27.322"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:27.333" level="INFO">Clicking element '//android.widget.Button[@text="LOG IN"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:27.322" endtime="20220505 12:18:28.125"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:18:28.126" endtime="20220505 12:18:30.604"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:30.611" level="INFO">Clicking element '//android.widget.Button[@text="ok"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:30.605" endtime="20220505 12:18:30.746"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220505 12:18:30.747" level="INFO">${counter} = 3+1</msg>
+<status status="PASS" starttime="20220505 12:18:30.746" endtime="20220505 12:18:30.747"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220505 12:18:30.747" endtime="20220505 12:18:30.748"/>
+</kw>
+<status status="PASS" starttime="20220505 12:18:22.905" endtime="20220505 12:18:30.748"/>
+</iter>
+<iter>
+<var name="${counter}">4</var>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:18:30.749" endtime="20220505 12:18:30.860"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:30.864" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:18:30.860" endtime="20220505 12:18:31.541"/>
+</kw>
+<kw name="Numerify" library="FakerLibrary">
+<var>${com_id}</var>
+<arg>text=######</arg>
+<doc>Generate a string with each placeholder in ``text`` replaced according
+to the following rules:</doc>
+<msg timestamp="20220505 12:18:31.542" level="INFO">${com_id} = 323498</msg>
+<status status="PASS" starttime="20220505 12:18:31.541" endtime="20220505 12:18:31.542"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<arg>${com_id}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:31.548" level="INFO">Typing text '323498' into text field '//android.widget.EditText[@resource-id='inputCompId']'</msg>
+<status status="PASS" starttime="20220505 12:18:31.542" endtime="20220505 12:18:32.320"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:32.326" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:18:32.321" endtime="20220505 12:18:33.080"/>
+</kw>
+<kw name="Free Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20220505 12:18:33.082" level="INFO">${email} = tmaddox@yahoo.com</msg>
+<status status="PASS" starttime="20220505 12:18:33.080" endtime="20220505 12:18:33.082"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:33.087" level="INFO">Typing text 'tmaddox@yahoo.com' into text field '//android.widget.EditText[@resource-id='inputUserName']'</msg>
+<status status="PASS" starttime="20220505 12:18:33.082" endtime="20220505 12:18:33.847"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:33.852" level="INFO">Clear text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:18:33.848" endtime="20220505 12:18:34.659"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${pass}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20220505 12:18:34.662" level="INFO">${pass} = +T+v%2l%M+</msg>
+<status status="PASS" starttime="20220505 12:18:34.660" endtime="20220505 12:18:34.662"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:34.673" level="INFO">Typing text '+T+v%2l%M+' into text field '//android.widget.EditText[@resource-id='inputPassword']'</msg>
+<status status="PASS" starttime="20220505 12:18:34.663" endtime="20220505 12:18:35.603"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:35.610" level="INFO">Clicking element '//android.widget.Button[@text="LOG IN"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:35.604" endtime="20220505 12:18:36.356"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220505 12:18:36.357" endtime="20220505 12:18:39.139"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220505 12:18:39.146" level="INFO">Clicking element '//android.widget.Button[@text="ok"]'.</msg>
+<status status="PASS" starttime="20220505 12:18:39.140" endtime="20220505 12:18:39.318"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220505 12:18:39.319" level="INFO">${counter} = 4+1</msg>
+<status status="PASS" starttime="20220505 12:18:39.318" endtime="20220505 12:18:39.319"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<msg timestamp="20220505 12:18:39.320" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20220505 12:18:39.319" endtime="20220505 12:18:39.324"/>
+</kw>
+<status status="PASS" starttime="20220505 12:18:30.748" endtime="20220505 12:18:39.324"/>
+</iter>
+<status status="PASS" starttime="20220505 12:17:56.986" endtime="20220505 12:18:39.324"/>
+</for>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220505 12:18:42.326" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220505 12:18:39.324" endtime="20220505 12:18:42.327"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220505 12:18:42.327" endtime="20220505 12:18:43.473"/>
+</kw>
+<status status="PASS" starttime="20220505 12:17:24.404" endtime="20220505 12:18:43.474"/>
+</kw>
+<status status="PASS" starttime="20220505 12:17:24.402" endtime="20220505 12:18:43.474"/>
+</test>
+<status status="PASS" starttime="20220505 12:17:23.558" endtime="20220505 12:18:43.477"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="NewApp">NewApp</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

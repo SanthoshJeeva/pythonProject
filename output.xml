@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on win32)" generated="20220505 20:46:10.250" rpa="false" schemaversion="3">
+<suite id="s1" name="NewApp" source="C:\Users\calib\PycharmProjects\pythonProject\Test\NewApp.robot">
+<test id="s1-t1" name="Login" line="5">
+<kw name="To_Validate_CompanyId_Useranme_password" library="OpenApp">
+<kw name="Verify_required_field_accept_blank_value" library="OpenApp">
+<kw name="OpenApp" library="OpenApp">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${port}</arg>
+<arg>platformName=${platform}</arg>
+<arg>deviceName=${device}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>appActivity=${appActivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220505 20:46:33.652" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220505 20:46:33.648" endtime="20220505 20:46:33.655"/>
+</kw>
+<msg timestamp="20220505 20:46:33.658" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220505 20:46:33.660" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20022ms.
+</msg>
+<status status="FAIL" starttime="20220505 20:46:11.140" endtime="20220505 20:46:33.661"/>
+</kw>
+<status status="FAIL" starttime="20220505 20:46:11.139" endtime="20220505 20:46:33.662"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Location_Allow}</arg>
+<arg>10s</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.664" endtime="20220505 20:46:33.664"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Location_Allow}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.664" endtime="20220505 20:46:33.664"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.664" endtime="20220505 20:46:33.664"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.664" endtime="20220505 20:46:33.664"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Call}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.664" endtime="20220505 20:46:33.664"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Call}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.664" endtime="20220505 20:46:33.664"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.664" endtime="20220505 20:46:33.665"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.665" endtime="20220505 20:46:33.665"/>
+</kw>
+<status status="FAIL" starttime="20220505 20:46:11.138" endtime="20220505 20:46:33.667"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${counter}</var>
+<value>0</value>
+<value>5</value>
+<iter>
+<var name="${counter}"/>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.667" endtime="20220505 20:46:33.667"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.667" endtime="20220505 20:46:33.667"/>
+</kw>
+<kw name="Numerify" library="FakerLibrary">
+<var>${com_id}</var>
+<arg>text=######</arg>
+<doc>Generate a string with each placeholder in ``text`` replaced according
+to the following rules:</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.667" endtime="20220505 20:46:33.667"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Company_id}</arg>
+<arg>${com_id}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.667" endtime="20220505 20:46:33.667"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.668" endtime="20220505 20:46:33.668"/>
+</kw>
+<kw name="Free Email" library="FakerLibrary">
+<var>${email}</var>
+<status status="NOT RUN" starttime="20220505 20:46:33.668" endtime="20220505 20:46:33.668"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${User_Name}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.668" endtime="20220505 20:46:33.668"/>
+</kw>
+<kw name="Clear Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<doc>Clears the text field identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.668" endtime="20220505 20:46:33.668"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${pass}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.668" endtime="20220505 20:46:33.668"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Password}</arg>
+<arg>${pass}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.668" endtime="20220505 20:46:33.668"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Login_in}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.668" endtime="20220505 20:46:33.668"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.668" endtime="20220505 20:46:33.668"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Information}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.669" endtime="20220505 20:46:33.669"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.669" endtime="20220505 20:46:33.669"/>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<arg>${counter}==5</arg>
+<doc>Stops executing the enclosing FOR loop if the ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.669" endtime="20220505 20:46:33.669"/>
+</kw>
+<status status="NOT RUN" starttime="20220505 20:46:33.667" endtime="20220505 20:46:33.669"/>
+</iter>
+<status status="NOT RUN" starttime="20220505 20:46:33.667" endtime="20220505 20:46:33.669"/>
+</for>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.669" endtime="20220505 20:46:33.669"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="NOT RUN" starttime="20220505 20:46:33.669" endtime="20220505 20:46:33.669"/>
+</kw>
+<status status="FAIL" starttime="20220505 20:46:11.137" endtime="20220505 20:46:33.670"/>
+</kw>
+<status status="FAIL" starttime="20220505 20:46:11.135" endtime="20220505 20:46:33.671">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20022ms.
+</status>
+</test>
+<status status="FAIL" starttime="20220505 20:46:10.252" endtime="20220505 20:46:33.671"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="NewApp">NewApp</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220505 20:46:33.658" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+</errors>
+</robot>
